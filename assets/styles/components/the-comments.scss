@@ -1,0 +1,24 @@
+.comments {
+    max-width: 960px;
+    margin: 70px auto;
+
+    &-title {
+        @include text(32px, 700);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &-search {
+        margin-top: 30px;
+        display: flex;
+        padding: 0 25%
+    }
+
+    &__content {
+        margin-top: 30px;
+
+        &-items {
+            margin-top: 20px;
+        }
+    }
+}

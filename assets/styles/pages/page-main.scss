@@ -1,0 +1,17 @@
+.app {
+    max-width: 960px;
+    margin: 40px auto;
+
+    .header {
+        @include text(32px, 700);
+
+        &-title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    .main {
+        margin-top: 40px;
+    }
+}

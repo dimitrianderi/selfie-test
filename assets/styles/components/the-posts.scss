@@ -1,0 +1,8 @@
+.posts {
+    width: 100%;
+
+    &-btn {
+        @include btn();
+        margin-left: auto;
+    }
+}

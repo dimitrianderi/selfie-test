@@ -1,0 +1,10 @@
+.post {
+    width: 100%;
+
+    &-btn {
+        @include btn(130px, 22px);
+        text-align: center;
+        margin: 10px;
+        background-color: $white;
+    }
+}

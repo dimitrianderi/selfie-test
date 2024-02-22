@@ -1,0 +1,29 @@
+.search {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    &-input {
+        @include text(16px, 300);
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 5px;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding-right: 30px;
+        background-color: $white;
+
+        &:focus {
+            border: 1px solid $gray;
+        }
+    }
+
+    &-cross {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+        cursor: pointer;
+    }
+}

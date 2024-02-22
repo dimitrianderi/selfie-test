@@ -1,0 +1,59 @@
+.card {
+    @include text();
+    background: $white;
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 4px;
+
+    &.error {
+        background: $error;
+    }
+
+    &-title {
+        text-transform: capitalize;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &-author {
+        margin-top: 20px;
+        display: flex;
+        color: $alert;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &-text {
+        margin-top: 20px;
+        font-weight: 500;
+        text-align: justify;
+        text-transform: capitalize;
+    }
+
+    &.large {
+        margin: 10px;
+        padding: 50px;
+
+        .card-title {
+            font-size: 42px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .card-author {
+            margin-top: 50px;
+            font-size: 24px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .card-text {
+            margin-top: 50px;
+            text-transform: capitalize;
+            font-size: 18px;
+        }
+    }
+}

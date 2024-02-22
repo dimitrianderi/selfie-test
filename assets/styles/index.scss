@@ -1,0 +1,19 @@
+// common
+@import '@/assets/styles/common/reset.scss';
+@import '@/assets/styles/common/fonts.scss';
+@import '@/assets/styles/common/variables.scss';
+@import '@/assets/styles/common/mixins.scss';
+@import '@/assets/styles/common/default.scss';
+
+// pages
+@import '@/assets/styles/pages/page-main.scss';
+@import '@/assets/styles/pages/page-post.scss';
+
+// components
+@import '@/assets/styles/components/the-nav.scss';
+@import '@/assets/styles/components/the-posts.scss';
+@import '@/assets/styles/components/the-comments.scss';
+@import '@/assets/styles/components/app-card.scss';
+@import '@/assets/styles/components/app-search.scss';
+@import '@/assets/styles/components/app-loader.scss';
+@import '@/assets/styles/components/app-pagination.scss';

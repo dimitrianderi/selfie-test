@@ -1,0 +1,42 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 300px;
+    border-radius: 30px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    &-cell {
+      @include text(30px, 700);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 10px;
+        background-color: $disabled;
+        width: 20%;
+        border-right: 1px solid $gray;
+        cursor: default;
+        
+        &:last-child {
+          border: none;
+        }
+        
+        &.icon {
+          cursor: pointer;
+          background-color: $white;
+          
+          &:hover {
+            background-color: $active;
+            transition: all .3s ease;
+          }
+
+          &.disabled {
+            background-color: $disabled;
+            pointer-events: none;
+          }
+        }
+    }
+}

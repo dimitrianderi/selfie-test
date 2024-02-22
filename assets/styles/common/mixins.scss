@@ -1,0 +1,23 @@
+@mixin text($size: 16px, $weight: 300, $color: $dark, $lh: 25px) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $lh;
+}
+
+@mixin btn ($width: min-content, $size: 20px) {
+    @include text($size, 500);
+    width: $width;
+    margin-top: 5px;
+    padding: 5px 15px;
+    background-color: $light;
+    display: block;
+    box-shadow: 1px 2px 2px $dark;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: none;
+        transition: all 0.3s ease;
+    }
+}

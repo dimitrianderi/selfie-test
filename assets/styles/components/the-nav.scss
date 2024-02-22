@@ -1,0 +1,25 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__section {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+
+        &-sort {
+            @include text(20px, 700);
+            width: 100%;
+            width: 100%;
+            height: 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                transition: color 0.3s ease;
+                color: lighten($dark, 30%);
+            }
+        }
+    }
+}
