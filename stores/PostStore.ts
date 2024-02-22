@@ -9,8 +9,8 @@ const usePostStore = defineStore('postsStore', () => {
 
   const getPost = computed<IData | null>(() => post.value)
   const getComments = computed<IComment[]>(() => comments.value)
-  const getCommentsLoaded = computed(() => commentsLoaded.value)
-  const getUser = computed(() => user.value)
+  const getCommentsLoaded = computed<IComment[]>(() => commentsLoaded.value)
+  const getUser = computed<string>(() => user.value)
 
   const commentsFiltered = computed<IComment[]>(() => getComments.value
     .filter((comment) => {
@@ -25,15 +25,18 @@ const usePostStore = defineStore('postsStore', () => {
     post.value = { ...currentPost };
   };
 
-  const setComments = (data: IComment[]) => {
+  const setComments = (data: IComment[]): void => {
     comments.value = [...data];
   }
 
-  const setUser = (username: string) => {
+  const setUser = (username: string): void => {
     user.value = username;
+  }
+
+  watch(user, () => {
     commentsLoaded.value.length = 0;
     loadComments();
-  }
+  })
 
   const loadPost = async (payload: string | string[]): Promise<void> => {
     const _post: string = `/${payload}`;
@@ -43,7 +46,7 @@ const usePostStore = defineStore('postsStore', () => {
 
     try {
       const res = await fetchData(URL);
-      const data = {
+      const data: IData = {
         id: res.id,
         title: res.title,
         body: res.body,
@@ -56,19 +59,11 @@ const usePostStore = defineStore('postsStore', () => {
   }
 
   const loadComments = async (): Promise<void> => {
-    // const _post: string = `?postId=${payload}`;
-    // const URL: string = `${BASE_URL}comments${_post}`;
     for (let i = 0; i < 2; i++) {
       if (commentsLoaded.value.length < commentsFiltered.value.length) {
         commentsLoaded.value.push(commentsFiltered.value[commentsLoaded.value.length])
-        // console.log(commentsLoaded)
       }
     }
-    try {
-
-      // const res = await fetchData(URL);
-
-    } catch (err) { throw new Error() }
   }
 
   return {

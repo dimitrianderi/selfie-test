@@ -17,12 +17,12 @@ const usePostsStore = defineStore('postsStore', () => {
 
   const page = ref<number>(1)
   const totalPosts = ref<number>(0)
-  const maxPage = computed(() => Math.ceil(totalPosts.value / PER_PAGE) || 1);
+  const maxPage = computed<number>(() => Math.ceil(totalPosts.value / PER_PAGE) || 1);
   const isSubmitting = ref<boolean>(false)
   const sort = ref<Sort>('')
   const search = ref<string>('')
 
-  watch(maxPage, (newValue) => {
+  watch(maxPage, (newValue: number): void => {
     if (page.value > newValue) {
       page.value = newValue
     }
@@ -35,22 +35,22 @@ const usePostsStore = defineStore('postsStore', () => {
   const getIsSubmitting = computed<boolean>(() => isSubmitting.value)
   const getSearch = computed<string>(() => search.value)
 
-  const startPage = async () => {
+  const startPage = async (): Promise<void> => {
     await loadPosts(1, sort.value)
     page.value = 1
   }
 
-  const prevPage = async () => {
+  const prevPage = async (): Promise<void> => {
     await loadPosts(page.value - 1, sort.value)
     page.value -= 1
   }
 
-  const nextPage = async () => {
+  const nextPage = async (): Promise<void> => {
     await loadPosts(page.value + 1, sort.value)
     page.value += 1
   }
 
-  const endPage = async () => {
+  const endPage = async (): Promise<void> => {
     await loadPosts(maxPage.value, sort.value)
     page.value = maxPage.value
   }
@@ -101,7 +101,7 @@ const usePostsStore = defineStore('postsStore', () => {
     try {
       changeIsSubmitting(true)
       const res = await fetchData(URL);
-      const data = res.map((item: IData) => ({
+      const data: IData[] = res.map((item: IData) => ({
         id: item.id,
         title: item.title,
         body: item.body,
