@@ -13,11 +13,11 @@
     <div class="comments__content" v-if="comments.length">
       <ul class="comments__content-items">
         <li v-for="comment in comments" :key="comment.id">
-          <app-card
+          <AppCard
             :title="comment.name"
             :description="comment.email"
             :text="comment.body"
-          ></app-card>
+          ></AppCard>
         </li>
       </ul>
     </div>

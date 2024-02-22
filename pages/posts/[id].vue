@@ -1,15 +1,15 @@
 <template>
   <div>
-    <app-loader v-if="isLoad"></app-loader>
+    <AppLoader v-if="isLoad"></AppLoader>
     <div class="post" v-else>
       <a class="post-btn" href="/">Main Page</a>
-      <app-card
+      <AppCart
         :title="post ? post.title : 'Not Found'"
         :description="post ? post.user.name : ''"
         :text="post ? post.body : 'Posts not found'"
         :customClass="post ? 'large' : 'large error'"
-      ></app-card>
-      <the-comments></the-comments>
+      ></AppCart>
+      <TheComments></TheComments>
     </div>
   </div>
 </template>

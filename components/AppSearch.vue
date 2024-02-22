@@ -9,7 +9,7 @@
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
       "
     />
-    <nuxt-icon
+    <NuxtIcon
       class="search-cross"
       name="Cross"
       size="55px"

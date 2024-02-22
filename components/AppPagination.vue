@@ -1,19 +1,19 @@
 <template>
   <ul class="pagination">
     <li :class="['pagination-cell', 'icon', {'disabled': page === 1 || isSubmitting}]" @click="postsStore.startPage()">
-      <nuxt-icon name="ArrowMaxLeft"/>
+      <NuxtIcon name="ArrowMaxLeft"/>
     </li>
     <li :class="['pagination-cell', 'icon', {'disabled': page === 1 || isSubmitting}]" @click="postsStore.prevPage()">
-      <nuxt-icon name="ArrowLeft"/>
+      <NuxtIcon name="ArrowLeft"/>
     </li>
     <li class="pagination-cell">
       {{ page }}
     </li>
     <li :class="['pagination-cell', 'icon', {'disabled': page === maxPage || isSubmitting}]" @click="postsStore.nextPage()">
-      <nuxt-icon name="ArrowRight"/>
+      <NuxtIcon name="ArrowRight"/>
     </li>
     <li :class="['pagination-cell', 'icon', {'disabled': page === maxPage || isSubmitting}]" @click="postsStore.endPage()">
-      <nuxt-icon name="ArrowMaxRight"/>
+      <NuxtIcon name="ArrowMaxRight"/>
     </li>
   </ul>
 </template>

@@ -11,12 +11,12 @@
       </li>
     </ul>
 
-    <app-card
+    <AppCard
       v-else
       title="Not Found"
       text="Posts not found"
       customClass="error"
-    ></app-card>
+    ></AppCard>
   </div>
 </template>
 

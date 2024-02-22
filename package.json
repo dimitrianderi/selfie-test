@@ -1,21 +1,27 @@
 {
-    "name": "nuxt-app",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "build": "nuxt build",
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
-    },
-    "dependencies": {
-        "@pinia/nuxt": "^0.5.1",
-        "nuxt": "^3.5",
-        "nuxt-icons": "^3.2.1",
-        "pinia": "^2.1.7",
-        "sass": "^1.71.0",
-        "vue": "^3.4.19",
-        "vue-router": "^4.2.5"
-    }
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "predeploy": "nuxt generate",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "firebase": "^10.8.0",
+    "nuxt": "^3.5",
+    "nuxt-icons": "^3.2.1",
+    "pinia": "^2.1.7",
+    "sass": "^1.71.0",
+    "vue": "^3.4.19",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }

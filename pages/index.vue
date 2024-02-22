@@ -6,9 +6,9 @@
 
     <app-loader v-if="isLoad"></app-loader>
     <main class="main" v-else>
-      <the-nav></the-nav>
+      <TheNav></TheNav>
       <AppLoader v-if="isSubmitting"></AppLoader>
-      <the-posts :posts="posts" v-else></the-posts>
+      <ThePosts :posts="posts" v-else></ThePosts>
     </main>
   </div>
 </template>
